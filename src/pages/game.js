@@ -1,7 +1,9 @@
 import React from "react";
 import "./game.scss";
+
 import tic from "../icons/tic.svg";
 import tac from "../icons/tac.svg";
+import soundfile from "../sound/trigger-button-press.mp3";
 
 export default class Game extends React.Component {
   state = {
@@ -9,11 +11,15 @@ export default class Game extends React.Component {
     field: [0, 0, 0, 0, 0, 0, 0, 0, 0]
   };
 
+  audio = new Audio(soundfile);
+
   changeState = (pos, val) => () => {
     const { field } = this.state;
     let arr = field;
     if (!arr[pos]) {
       arr[pos] = val;
+
+      this.audio.play();
 
       const ans = { turn: val === 1 ? 2 : 1, field: arr };
       this.setState(ans);
@@ -65,8 +71,11 @@ export default class Game extends React.Component {
     this.findWinner();
 
     return (
-      <>
-        <button onClick={this.resetGame}>Reset Game</button>
+      <div className="container">
+        <button className="btn" onClick={this.resetGame}>
+          RESTART
+        </button>
+
         <h2 className="turn-text noselect">{`Player turn ${
           turn === 2 ? "O" : "X"
         }`}</h2>
@@ -97,7 +106,7 @@ export default class Game extends React.Component {
             );
           })}
         </div>
-      </>
+      </div>
     );
   }
 }

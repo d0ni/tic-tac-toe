@@ -45,6 +45,10 @@
   align-items: center;
 }
 
+.field:hover {
+  cursor: pointer;
+}
+
 .noselect {
   -webkit-touch-callout: none; /* iOS Safari */
   -webkit-user-select: none; /* Safari */
