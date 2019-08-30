@@ -1,0 +1,56 @@
+.turn-text {
+  // margin: 0 auto;
+  text-align: center;
+}
+
+.game-field {
+  height: 50vh;
+  width: 50vh;
+  min-width: 250px;
+  min-height: 250px;
+  display: grid;
+  grid-template: 33.3% 2px 33.3% 2px 33.3% / 33.3% 2px 33.3% 2px 33.3%;
+  margin: 0 auto;
+}
+
+.line {
+  background-color: black;
+}
+
+.vert1 {
+  grid-area: 1 / 2 / span 5 / span 1;
+}
+
+.vert2 {
+  grid-area: 1 / 4 / span 5 / span 1;
+}
+
+.gor1 {
+  grid-area: 2 / 1 / span 1 / span 5;
+}
+
+.gor2 {
+  grid-area: 4 / 1 / span 1 / span 5;
+}
+
+.field {
+  height: 90%;
+  width: 90%;
+  margin: 5%;
+  font-size: 3.6rem;
+  text-align: center;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.noselect {
+  -webkit-touch-callout: none; /* iOS Safari */
+  -webkit-user-select: none; /* Safari */
+  -khtml-user-select: none; /* Konqueror HTML */
+  -moz-user-select: none; /* Firefox */
+  -ms-user-select: none; /* Internet Explorer/Edge */
+  user-select: none; /* Non-prefixed version, currently
+                        supported by Chrome and Opera */
+}
